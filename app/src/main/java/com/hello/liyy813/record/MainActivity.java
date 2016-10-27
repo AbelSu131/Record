@@ -122,9 +122,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
                                 CAMERA_REQUEST_CODE);
                         break;
                     case 1://选择本地图片
-                        Intent intentFromGallery = new Intent();
+                        Intent intentFromGallery = new Intent(Intent.ACTION_PICK,
+                                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                         intentFromGallery.setType("image/*"); // 设置文件类型
-                        intentFromGallery.setAction(Intent.ACTION_GET_CONTENT);
+                        
                         startActivityForResult(intentFromGallery,
                                 IMAGE_REQUEST_CODE);
                         break;
